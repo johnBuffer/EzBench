@@ -1,5 +1,5 @@
 # EzBench :checkered_flag:
-*Easy-to-use single file header only* performance comparator for C++ **(cpp11 and later)**
+*Easy-to-use single file header only* performance comparator for C++ **(cpp11 or later)**
 
 ## Usage
 ### Include ezbench.hpp
