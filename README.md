@@ -76,6 +76,6 @@ Vector  1355.97 ms (2131 % -> x21)
 ```
 ## Future work :coffee:
 - [ ] Add metric configuration (only ms for now)
-- [ ] Implement multi iteration benchmark with stats 
+- [ ] Implement multi iterations support with stats 
 
 
