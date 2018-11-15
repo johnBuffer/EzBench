@@ -29,13 +29,13 @@ struct TestStruct
 ### Build the benchmark - so EZ :ok_hand:
 ```c++
 std::vector<TestStruct> vec;
-std::list<TestStruct> list;
+std::list<TestStruct>   list;
 
 uint8_t  iteration_count = 1;
-uint32_t objects_count = 1000000;
+uint32_t objects_count   = 1000000;
 
 ezb::Benchmark bench{
-  iteration_count, // Not supported yet, set it to 1
+  iteration_count, // Not implemented yet, set it to 1
   {
     {"Insertion", // Test 1
       {
