@@ -22,7 +22,7 @@ Using a very simple test structure
 ```c++
 struct TestStruct
 {
-  double ddd[20];
+  double useless[20];
   TestStruct() = default;
 };
 ```
