@@ -1,4 +1,4 @@
-# EzBench
+# EzBench :checkered_flag:
 Easy to use performance comparator for C++ (C++11 required)
 
 ## Usage
@@ -27,7 +27,7 @@ struct TestStruct
 };
 ```
 
-### Build the benchmark - so EZ
+### Build the benchmark - so EZ :ok_hand:
 ```c++
 std::vector<TestStruct> vec;
 std::list<TestStruct> list;
@@ -74,6 +74,8 @@ List    63.3059 ms (537 % -> x5)
 List    63.6138 ms (100 % -> x1)
 Vector  1355.97 ms (2131 % -> x21)
 ```
-
+## Future work :coffee:
+- [ ] Add metric configuration (only ms for now)
+- [ ] Implement multi iteration benchmark with stats 
 
 
