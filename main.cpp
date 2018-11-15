@@ -85,7 +85,7 @@ int main()
 	uint8_t  iteration_count = 1;
 	uint32_t objects_count = 1000000;
 
-	Benchmark bench{
+	ezb::Benchmark bench{
 		iteration_count,
 		{
 			{"Insertion",
