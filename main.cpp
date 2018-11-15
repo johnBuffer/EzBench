@@ -1,4 +1,4 @@
-#include "Benchmark.hpp"
+#include "ezbench.hpp"
 #include <vector>
 #include <list>
 
