@@ -14,7 +14,7 @@ void vecAdd(std::vector<TestStruct>* vec, uint32_t add_count)
   srand(0);
   for (int i(add_count); i--;)
   {
-    vec->push_back(TestStruct(0));
+    vec->push_back(TestStruct());
   }
 }
 ```
