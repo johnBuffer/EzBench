@@ -2,7 +2,7 @@
 Easy to use performance comparator for C++ (C++11 required)
 
 ## Usage
-Include ezbench.hpp
+### Include ezbench.hpp
 ```c++
 include "ezbench.hpp"
 ```
@@ -17,32 +17,13 @@ void vecAdd(std::vector<TestStruct>* vec, uint32_t add_count)
     vec->push_back(TestStruct(0));
   }
 }
-
-void listAdd(std::list<TestStruct>* list, uint32_t add_count)
-{
-  srand(0);
-  for (int i(add_count); i--;)
-  {
-    list->push_back(TestStruct(0));
-  }
-}
 ```
 Using a very simple test structure
 ```c++
 struct TestStruct
 {
   double ddd[20];
-  
   TestStruct() = default;
-  TestStruct(int)
-  {
-    ddd[1] = rand() % 10000;
-  }
-
-  void increaseA()
-  {
-    ddd[0]++;
-  }
 };
 ```
 
