@@ -9,7 +9,7 @@ include "ezbench.hpp"
 
 ### Create a set of minimal functions to compare
 ```c++
-void vecAdd(std::vector<TestStruct>* vec, uint32_t add_count)
+void vecAdd(std::vector<TestStruct>& vec, uint32_t add_count)
 {
     for (int i(add_count); i--;)
     {
@@ -39,20 +39,20 @@ ezb::Benchmark bench{
     {
       {"Insertion", // Test 1
           {
-            {"Vector", std::bind(vecAdd, &vec,  objects_count)},
-            {"List", std::bind(listAdd,  &list, objects_count)}
+            {"Vector", std::bind(vecAdd, vec,  objects_count)},
+            {"List", std::bind(listAdd,  list, objects_count)}
           }
       },
       {"Iteration", // Test 2
           {
-              {"Vector", std::bind(vecIter, &vec)},
-              {"List", std::bind(listIter,  &list)}
+              {"Vector", std::bind(vecIter, vec)},
+              {"List", std::bind(listIter,  list)}
           }
       },
       {"Deletion", // Test 3
           {
-              {"Vector", std::bind(vecDel, &vec)},
-              {"List", std::bind(listDel,  &list)}
+              {"Vector", std::bind(vecDel, vec)},
+              {"List", std::bind(listDel,  list)}
           }
       }
   }
