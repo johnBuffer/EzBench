@@ -11,18 +11,18 @@ include "ezbench.hpp"
 ```c++
 void vecAdd(std::vector<TestStruct>* vec, uint32_t add_count)
 {
-  for (int i(add_count); i--;)
-  {
-    vec->push_back(TestStruct());
-  }
+    for (int i(add_count); i--;)
+    {
+        vec->push_back(TestStruct());
+    }
 }
 ```
 Using a very simple test structure
 ```c++
 struct TestStruct
 {
-  double useless[20];
-  TestStruct() = default;
+    double useless[20];
+    TestStruct() = default;
 };
 ```
 
@@ -35,26 +35,26 @@ uint8_t  iteration_count = 1;
 uint32_t objects_count   = 1000000;
 
 ezb::Benchmark bench{
-  iteration_count, // Not implemented yet, set it to 1
-  {
-    {"Insertion", // Test 1
-      {
-        {"Vector", std::bind(vecAdd, &vec,  objects_count)},
-        {"List", std::bind(listAdd,  &list, objects_count)}
+    iteration_count, // Not implemented yet, set it to 1
+    {
+      {"Insertion", // Test 1
+          {
+            {"Vector", std::bind(vecAdd, &vec,  objects_count)},
+            {"List", std::bind(listAdd,  &list, objects_count)}
+          }
+      },
+      {"Iteration", // Test 2
+          {
+              {"Vector", std::bind(vecIter, &vec)},
+              {"List", std::bind(listIter,  &list)}
+          }
+      },
+      {"Deletion", // Test 3
+          {
+              {"Vector", std::bind(vecDel, &vec)},
+              {"List", std::bind(listDel,  &list)}
+          }
       }
-    },
-    {"Iteration", // Test 2
-      {
-        {"Vector", std::bind(vecIter, &vec)},
-        {"List", std::bind(listIter,  &list)}
-      }
-    },
-    {"Deletion", // Test 3
-      {
-        {"Vector", std::bind(vecDel, &vec)},
-        {"List", std::bind(listDel,  &list)}
-      }
-    }
   }
 };
 ```
